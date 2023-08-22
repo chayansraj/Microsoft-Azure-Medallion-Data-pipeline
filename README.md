@@ -31,7 +31,14 @@ The dataset is an open source database provided by Microsoft namely 'AdventureWo
 6. **Azure Active Directory** - Azure Active Directory (Azure AD) is Microsoft's cloud-based identity and access management service. It provides a comprehensive set of capabilities for managing identities, securing access to resources, and enabling seamless authentication and authorization across applications and services. Azure AD is a foundational component of Microsoft's cloud services and plays a crucial role in modern IT infrastructure.
 7. **Microsoft Power BI** - Microsoft Power BI is a powerful business intelligence (BI) platform that allows users to visualize and share insights from their data. It enables organizations to connect to a wide range of data sources, transform and shape the data, create interactive reports and dashboards, and share those insights with others. Power BI is designed to help users make data-driven decisions and gain actionable insights from their data.
 
+# Implementation
+* **Step 1** - Create a data integration link service to connect SQL server with Azure Data Factory
+  Since, the database is located in an on-premises SQL Server, Microsoft Azure needs a way to detect the stored data and able to interact with it. To actualize that, the first step includes c       creating a Self Hosted Integration Runtime (SHIR) linked service and install it on the physical machine where the server is deployed. 
 
+<p align="center">
+  <img width="500" height="500" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
 
 
