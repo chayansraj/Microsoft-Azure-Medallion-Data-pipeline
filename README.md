@@ -40,7 +40,7 @@ The dataset is an open source database provided by Microsoft namely 'AdventureWo
   <h6 align = "center" > Source: Author </h6>
 </p>
 
-Start the installed integration runtime and ADF is ready to be integrated with On-prem SQL Server Database. Create a new pipeline in ADF to copy data from SQL Server to Azure Data Lake Storage Gen2. It is important to select the Source and Sink properties to define the correct data flow. The pipeline consists of two parts, firstly, the lookup table that will query the name and schema of each table stored in the SQL Server Database
+Start the installed integration runtime and ADF is ready to be integrated with On-prem SQL Server Database. Create a new pipeline in ADF to copy data from SQL Server to Azure Data Lake Storage Gen2. It is important to select the Source and Sink properties to define the correct data flow. The pipeline consists of two parts, firstly, the lookup table that will query the name and schema of each table stored in the SQL Server Database. Secondly, creating a ForEach element that runs a for-loop through the output of lookup table activity and store it in bronze storage layer which is exact copy of the SQL database. The folder structure is supposed to look like Layer/Schema/TableName/TableName.parquet
 
 <p align="center">
   <img width="400" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/a290089c-66cf-404d-951c-cc59979c4803">
