@@ -36,7 +36,7 @@ The dataset is an open source database provided by Microsoft namely 'AdventureWo
   Since, the database is located in an on-premises SQL Server, Microsoft Azure needs a way to detect the stored data and able to interact with it. To actualize that, the first step includes c       creating a Self Hosted Integration Runtime (SHIR) linked service and install it on the physical machine where the server is deployed. 
 
 <p align="center">
-  <img width="500" height="500" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
+  <img width="600" height="450" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
   <h6 align = "center" > Source: Author </h6>
 </p>
 
