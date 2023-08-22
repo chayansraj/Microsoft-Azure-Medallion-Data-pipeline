@@ -33,21 +33,39 @@ The dataset is an open source database provided by Microsoft namely 'AdventureWo
 
 # Implementation
 * **Step 1** - Create a data integration link service to connect SQL server with Azure Data Factory
-  Since, the database is located in an on-premises SQL Server, Microsoft Azure needs a way to detect the stored data and able to interact with it. To actualize that, the first step includes c       creating a Self Hosted Integration Runtime (SHIR) linked service and install it on the physical machine where the server is deployed. 
+  Since, the database is located in an on-premises SQL Server, Microsoft Azure needs a way to detect the stored data and able to interact with it.
+
+  <p align="center">
+  <img width="400" height="150" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/6e7b18fb-3e14-444d-9610-ae8fe5e32a97">
+  <h6 align = "center" > Source: Author </h6>
+</p>
+
+
+
+  To actualize that, the first step includes creating a Self Hosted Integration Runtime (SHIR) linked service and install it on the physical machine where the server is deployed. 
 
 <p align="center">
   <img width="500" height="350" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
   <h6 align = "center" > Source: Author </h6>
 </p>
 
-Start the installed integration runtime and ADF is ready to be integrated with On-prem SQL Server Database. Create a new pipeline in ADF to copy data from SQL Server to Azure Data Lake Storage Gen2. It is important to select the Source and Sink properties to define the correct data flow. The pipeline consists of two parts, firstly, the lookup table that will query the name and schema of each table stored in the SQL Server Database. Secondly, creating a ForEach element that runs a for-loop through the output of lookup table activity and store it in bronze storage layer which is exact copy of the SQL database. The folder structure is supposed to look like Layer/Schema/TableName/TableName.parquet
+Start the installed integration runtime and ADF is ready to be integrated with On-prem SQL Server Database. Create a new pipeline in ADF to copy data from SQL Server to Azure Data Lake Storage Gen2. It is important to select the Source and Sink properties to define the correct data flow. The pipeline consists of two parts, firstly, the lookup table that will query the name and schema of each table stored in the SQL Server Database. Secondly, creating a ForEach element that runs a for-loop through the output of lookup table activity and store it in bronze storage layer which is exact copy of the SQL database. The folder structure is supposed to look like Layer/Schema/TableName/TableName.parquet.
 
 <p align="center">
   <img width="400" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/a290089c-66cf-404d-951c-cc59979c4803">
   <h6 align = "center" > Source: Author </h6>
 </p>
 
+* **Step 2** - Mounting the database to perform Data Transformation using Azure Databricks
+  To do any kind of transformations, we need some compute power to do perform them. In Azure databricks, the 'compute' option gives us the capability to fire spark clusters and perform data transformations.
 
+
+<p align="center">
+  <img width="400" height="150" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/ccde7b46-ad0a-4bff-9b4c-40c215192c76">
+  <h6 align = "center" > Source: Author </h6>
+</p>
+
+  Using the workspace tab, we can create jupyter notebooks to mount the data from three layers into the datalake. The notebook will use the resources configured by spark clusters. The data transformations would be different for different projects, we are doing a simple transfomation such as modifying the datetime format to date format. The file is loaded in parquet format which is a column-based data format and is highly efficient.
 
 
 
