@@ -36,12 +36,16 @@ The dataset is an open source database provided by Microsoft namely 'AdventureWo
   Since, the database is located in an on-premises SQL Server, Microsoft Azure needs a way to detect the stored data and able to interact with it. To actualize that, the first step includes c       creating a Self Hosted Integration Runtime (SHIR) linked service and install it on the physical machine where the server is deployed. 
 
 <p align="center">
-  <img width="600" height="450" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
+  <img width="500" height="350" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/209c6c93-b4ad-4a54-bea5-42e4c02e0e0f">
   <h6 align = "center" > Source: Author </h6>
 </p>
 
+Start the installed integration runtime and ADF is ready to be integrated with On-prem SQL Server Database. Create a new pipeline in ADF to copy data from SQL Server to Azure Data Lake Storage Gen2. It is important to select the Source and Sink properties to define the correct data flow. The pipeline consists of two parts, firstly, the lookup table that will query the name and schema of each table stored in the SQL Server Database
 
-
+<p align="center">
+  <img width="400" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/a290089c-66cf-404d-951c-cc59979c4803">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
 
 
