@@ -112,10 +112,13 @@ Now, we have completed the data loading part.
   <h6 align = "center" > Source: Author </h6>
 </p>
 
-PowerBi will load all the gold data views stored in Synapse Analytics. 
+PowerBI will load all the gold data views stored in Synapse Analytics. Below are some of the dashboard reporting created using PowerBI. 
 
 
-
+<p align="center">
+  <img width="800" height="500" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/752dace5-67bd-468f-801c-e6795b086424">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
 
 
