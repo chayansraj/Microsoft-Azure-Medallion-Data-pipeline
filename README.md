@@ -78,10 +78,38 @@ Start the installed integration runtime and ADF is ready to be integrated with O
 
 In this step, we will be connecting Azure Databricks to create data pipeline that will be triggered automatically whenever there is new data. Similar to step 1, we will create two new Databricks notebook activities following the data ingestion part, i.e bronze to silver and silver to gold. Connect the output of ForEach activity to bronze to silver notebook.
 
-  <p align="center">
+<p align="center">
   <img width="900" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/45cc86a1-3058-4530-abf4-8ad1cd6a1153">
   <h6 align = "center" > Source: Author </h6>
 </p>
 
 The outpur from bronze to silver layer goes to silver to gold layer where the final transformations will happen and put the final data in gold container. The final data will be in delta format since this new format can handle schema changes and can keep track of file versions. One interesting thing is that we can monitor the execution of Azure Databricks notebook in real time, which could come handy to debug the code while runtime. 
+
+
+* **Step 4** - Load the data to Azure Synapse Analytics for further big data analytics
+  Azure Synapse Analytics is built on top of Azure Data Factory, so many options can be found in the Synapse Analytics. In Azure Synapse Analytics, we can create databases which is not available in ADF.
+
+<p align="center">
+  <img width="400" height="150" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/08312ac8-2164-4f3c-a746-bfc5129f3df4">
+  <h6 align = "center" > Source: Author </h6>
+</p>
+
+
+Azure Synapse Analytics could be thought of as the combination of both Azure Databricks and Azure Data Factory. Firstly we will create a Serverless Azure SQL Database to load the data into Azure Synapse Analytics. In serverless database, the data will already be available in the datalake, we will just be using the built-in SQL pool to directly query the gold data. Azure Synapse Analytics already has a link to Azure Data Lake Storage which will make the task even easier. We shall create a gold database view in serverless SQL database in order for us to query the data directly from Synapse workspace. Since the views are only referencing the data stored in datalake, any changes in datalake will also be reflected in Synapse database views. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
