@@ -13,3 +13,6 @@
 
 #Expression to create the structure of our storage account
 @{concat(dataset().tablename, '.parquet')}
+
+# Expression to forward childitems to ForEach activity to create SQL views
+@activity('get table names').output.childItems
