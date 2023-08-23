@@ -68,6 +68,20 @@ Start the installed integration runtime and ADF is ready to be integrated with O
   Using the workspace tab, we can create jupyter notebooks to mount the data from three layers into the datalake. The notebook will use the resources configured by spark clusters. The data transformations would be different for different projects, we are doing a simple transfomation such as modifying the datetime format to date format. The file is loaded in parquet format which is a column-based data format and is highly efficient.
 
 
+* **Step 3** - Connecting Azure Data Factory with Azure Databricks to create data pipelines for data transformations.
+  The data is ever increasing and we need a way to automate the data ingestion and transformation processes as much as possible.
 
+  <p align="center">
+  <img width="400" height="150" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/814e5b57-14de-42bb-8de2-ecf1058d9fa9">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
+In this step, we will be connecting Azure Databricks to create data pipeline that will be triggered automatically whenever there is new data. Similar to step 1, we will create two new Databricks notebook activities following the data ingestion part, i.e bronze to silver and silver to gold. Connect the output of ForEach activity to bronze to silver notebook.
+
+  <p align="center">
+  <img width="900" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/45cc86a1-3058-4530-abf4-8ad1cd6a1153">
+  <h6 align = "center" > Source: Author </h6>
+</p>
+
+The outpur from bronze to silver layer goes to silver to gold layer where the final transformations will happen and put the final data in gold container. The final data will be in delta format since this new format can handle schema changes and can keep track of file versions. One interesting thing is that we can monitor the execution of Azure Databricks notebook in real time, which could come handy to debug the code while runtime. 
 
