@@ -97,12 +97,22 @@ The outpur from bronze to silver layer goes to silver to gold layer where the fi
 
 Azure Synapse Analytics could be thought of as the combination of both Azure Databricks and Azure Data Factory. Firstly we will create a Serverless Azure SQL Database to load the data into Azure Synapse Analytics. In serverless database, the data will already be available in the datalake, we will just be using the built-in SQL pool to directly query the gold data. Azure Synapse Analytics already has a link to Azure Data Lake Storage which will make the task even easier. We shall create a gold database view in serverless SQL database in order for us to query the data directly from Synapse workspace. Since the views are only referencing the data stored in datalake, any changes in datalake will also be reflected in Synapse database views. 
 
+<p align="center">
+  <img width="450" height="250" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/dc162e7f-6638-4783-ac34-83dd57eb9998">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
+Now, we have completed the data loading part.
 
+* **Step 5** - Connecting PowerBI to Azure Synapse Analytics to create interactive visualizations
+  The PowerBI desktop will be used and the data source will be marked as Azure Synapse Analytics SQL views.
 
+<p align="center">
+  <img width="400" height="150" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/36a45150-5433-49b7-8555-620f9f765ae1">
+  <h6 align = "center" > Source: Author </h6>
+</p>
 
-
-
+PowerBi will load all the gold data views stored in Synapse Analytics. 
 
 
 
