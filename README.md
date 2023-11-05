@@ -1,5 +1,5 @@
 # Data Migration and Analytics using Microsoft Azure (Data Engineering)
-In this project we are going to create an end-to-end data platform right from Data Ingestion, Data Transformation, Data Loading and Reporting.
+In this project we are going to create an end-to-end data pipeline that moves the data from an On-Prem SQL database and following steps such as Data Ingestion, Data Transformation, Data Loading, Data Governance and finally Data Reporting using Microsoft Power BI.
 
 # Project Goals 
 
