@@ -1,6 +1,7 @@
 # Data Migration and Analytics using Microsoft Azure (Data Engineering)
 In this project we are going to create an end-to-end data pipeline that moves the data from an On-Prem SQL database and following steps such as Data Ingestion, Data Transformation, Data Loading, Data Governance and finally Data Reporting using Microsoft Power BI.
 
+
 # Project Goals 
 
 1. Data Ingestion - Create a data ingestion pipeline to extract data from on-premises SQL Server Database using Azure Data Factory
@@ -19,6 +20,11 @@ The architecture (Data flow) used in this project uses different Azure functiona
   <img width="950" height="550" src="https://github.com/chayansraj/Microsoft-Azure-Data-Engineering-End-to-End/assets/22219089/35edfd98-87ae-4389-81f0-40d1b7021892">
   <h6 align = "center" > Source: Author </h6>
 </p>
+
+With the combination of Azure Datalake and Azure Databricks, we can create a lakehouse architecture that follows three layer of data processing: 
+a) Bronze Layer - This is the exact copy of the data source, in its raw form. All the tables (relational model) or any unstructured data (Non-relational model) is stored in this layer. No transformations are done.
+b) Silver Layer - In this step, soft data transformations are performed such as fixing data types, column names, date formats, etc. to a standardized format and store in a more structured way.
+c) Gold Layer - This layer is the cleanest form of data that can be used for downstream tasks. Number of other things could also be implemented at this stage like business rules, conformity checks, etc.
 
 # Dataset Used 
 The dataset is an open source database provided by Microsoft namely 'AdventureWorks2017'. It contains a lot of different tables with their corresponding relationships. Dataset link - https://learn.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver16&tabs=ssms
