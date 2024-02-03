@@ -12,8 +12,6 @@ In this project we are going to create an end-to-end data pipeline that moves th
 
 
 
-
-
 # Data Architecture
 
 The architecture (Data flow) used in this project uses different Azure functionalities.
