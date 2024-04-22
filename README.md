@@ -1,6 +1,8 @@
 # Data Migration and Analytics using Microsoft Azure (Data Engineering)
 In this project we are going to create an end-to-end data pipeline that moves the data from an On-Prem SQL database and following steps such as Data Ingestion, Data Transformation, Data Loading, Data Governance and finally Data Reporting using Microsoft Power BI.
 
+
+
 # Project Goals 
 
 1. Data Ingestion - Create a data ingestion pipeline to extract data from on-premises SQL Server Database using Azure Data Factory
