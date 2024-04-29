@@ -3,6 +3,7 @@ In this project we are going to create an end-to-end data pipeline that moves th
 
 
 
+
 # Project Goals 
 
 1. Data Ingestion - Create a data ingestion pipeline to extract data from on-premises SQL Server Database using Azure Data Factory
